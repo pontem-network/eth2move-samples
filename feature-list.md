@@ -3,7 +3,7 @@
 ✖️️Implemented in a static analyzer, but not available at runtime.
 
 - [x] Supported all sized types. (U256, bool, address, etc.)
-- [x] Events (log)
+- [x] Events.
 - [x] Storage operations.
 - [x] Memory operations.
 - [x] Branching (if, else)
@@ -35,7 +35,10 @@
   - [x] Byte❗
   - [ ] AddMod
   - [ ] MulMod
-- [ ] Looping (for, while, do-while)
+- [ ] Looping 
+  - [x] For❗
+  - [ ] While
+  - [ ] Do-While
 - [ ] Dynamic types (string, bytes, etc.)
 - [ ] Dependency
   - [x] Message signer
