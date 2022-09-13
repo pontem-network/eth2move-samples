@@ -76,7 +76,7 @@ e2m --help
 
 ### Module transformation and publication
 This command we will make
-* Converting a "sol" file to "mv"
+* Converting a [./samples/users.sol](https://github.com/pontem-network/eth2move-samples/blob/main/samples/users.sol) file to "mv"
 * Generate an interface to use in source. The `./i_users/` folder will appear in the current directory 
 * Module will support "move" types
 * We will publish the generated module from the "default" profile
@@ -92,7 +92,7 @@ e2m ./samples/users.sol \
 ```
 
 ### Publishing a script
-Publishing a script for interacting with the module
+Publishing a [script](https://github.com/pontem-network/eth2move-samples/tree/main/samples/sc_users) for interacting with the module
 
 > **Important** don't forget to replace the address
 
