@@ -70,7 +70,7 @@
   - [x] PC ✖️️
   - [ ] Create
   - [ ] Create2
--[x] Solidity interface mapping to move interface.
+  - [x] Solidity interface mapping to move interface.
   - [x] Primitive types (u128, bool, address)
   - [x] U256
   - [ ] Structs
