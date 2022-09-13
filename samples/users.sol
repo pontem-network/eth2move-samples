@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 pragma solidity ^0.8.0;
 
 contract Users {
@@ -21,6 +23,7 @@ contract Users {
     }
 
     function create_user() public {
+        require(user_store[msg.sender].id == 0);
         seq = seq + 1;
         user_store[msg.sender] = User(seq, false, 0);
         emit NewUser(msg.sender, false, 0);
