@@ -24,7 +24,7 @@
   - [x] BitAnd
   - [x] BitXor
   - [x] Shl
-  - [x] Sar❗
+  - [x] Sar❗(shift right with sign)
   - [x] Shr
   - [x] Lt
   - [x] Gt
@@ -33,8 +33,8 @@
   - [x] BitNot
   - [x] IsZero
   - [x] Byte❗
-  - [ ] AddMod
-  - [ ] MulMod
+  - [ ] AddMod (a + b) % N
+  - [ ] MulMod (a * b) % N
 - [ ] Looping 
   - [x] For❗
   - [ ] While
