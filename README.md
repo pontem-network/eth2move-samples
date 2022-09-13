@@ -51,6 +51,7 @@ e2m --help
 * `-i`, `--interface_package`   Generate an interface project
 * `--native_input`      Input params of native type
 * `--native_output`     Output value of native type
+* `u128_io`             Use u128 instead of u256
 
 ## Example
 
