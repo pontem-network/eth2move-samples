@@ -1,7 +1,7 @@
 module sc::ScUser {
     use sc::Users;
 
-    public entry fun init(account_address: &signer) {
+    public entry fun constructor(account_address: &signer) {
         Users::constructor(account_address);
     }
 
