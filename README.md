@@ -74,7 +74,7 @@ e2m --help
 
 
 
-## Module transformation and publication
+### Module transformation and publication
 This command we will make
 * Converting a "sol" file to "mv"
 * Generate an interface to use in source. The `./i_users/` folder will appear in the current directory 
@@ -90,7 +90,8 @@ e2m ./samples/users.sol \
    -i \
    -d
 ```
-## Publishing a script
+
+### Publishing a script
 Publishing a script for interacting with the module
 
 > **Important** don't forget to replace the address
@@ -101,7 +102,7 @@ aptos move publish \
   --max-gas 1000
 ```
 
-## Calling the module constructor. 
+### Calling the module constructor. 
 Calling the module constructor to assign the current account as the owner
 
 ```bash
@@ -110,7 +111,7 @@ aptos move run \
    --max-gas 1000
 ```
 
-## Adding a "demo" account
+### Adding a "demo" account
 ```bash
 aptos move run \
    --function-id default::ScUser::create_user \
@@ -118,7 +119,7 @@ aptos move run \
    --profile demo
 ```
 
-## ID verification
+### ID verification
 account "default": id = 1
 ```bash
 aptos move run \
@@ -136,7 +137,7 @@ aptos move run \
   --profile demo
 ```
 
-## Checking whether this account is the owner:
+### Checking whether this account is the owner:
 ```bash
 aptos move run \
    --function-id default::ScUser::is_owner \
@@ -150,7 +151,7 @@ aptos move run \
    --profile demo
 ```
 
-## Checking the balance
+### Checking the balance
 account "default": 10000000000000000000000000000
 ```bash
 aptos move run \
@@ -167,7 +168,7 @@ aptos move run \
   --profile demo
 ```
 
-## Transfer
+### Transfer
 Sending 200 coins from "default" to "demo"
 ```bash
 aptos move run \
@@ -176,7 +177,7 @@ aptos move run \
   --max-gas 1000
 ```
 
-### Checking the transfer
+#### Checking the transfer
 Account **default**
 ```bash
 aptos move run \
