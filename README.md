@@ -2,6 +2,8 @@
 
 EVM to Move static bytecode translator.
 
+[Feature list](feature-list.md)
+
 ## e2m
 Converts **solidity file** to **binary move** code. You can convert from **abi + bin** files or a **sol** file
 
