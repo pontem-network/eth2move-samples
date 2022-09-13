@@ -33,8 +33,12 @@ The **aptos** version must be at least **0.3.3**
 aptos --version
 ```
 
-## Installation e2m
-@todo
+## Download e2m
+[Download link for the latest version of e2m](https://github.com/pontem-network/eth2move-samples/releases) \
+Unpack the archive and place the executable file in a place convenient for you. For convenience, create an alias **e2m** in the system for this file.
+> **! IMPORTANT**
+> In all examples, e2m will be called via an alias
+
 
 ### See help:
 ```bash
