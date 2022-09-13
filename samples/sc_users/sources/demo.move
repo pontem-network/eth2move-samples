@@ -18,7 +18,7 @@ module sc::ScUser {
         assert!(Users::is_owner(account_address), 2);
     }
 
-    public entry fun is_balance(account_address: &signer, balance:u128) {
+    public entry fun check_balance(account_address: &signer, balance:u128) {
         assert!(Users::get_balance(account_address) == Users::from_u128(balance), 3);
     }
 

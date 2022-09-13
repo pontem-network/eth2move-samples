@@ -162,7 +162,7 @@ aptos move run \
 account "default": 10000000000000000000000000000
 ```bash
 aptos move run \
-  --function-id default::ScUser::is_balance \
+  --function-id default::ScUser::check_balance \
   --args u128:10000000000000000000000000000 \
   --max-gas 1000
 ```
@@ -188,7 +188,7 @@ aptos move run \
 Account **default**
 ```bash
 aptos move run \
-  --function-id default::ScUser::is_balance \
+  --function-id default::ScUser::check_balance \
   --args u128:9999999999999999999999999800 \
   --max-gas 1000
 ```
@@ -196,7 +196,7 @@ aptos move run \
 Account **demo**
 ```bash
 aptos move run \
-  --function-id default::ScUser::is_balance \
+  --function-id default::ScUser::check_balance \
   --args u128:200 \
   --max-gas 1000 \
   --profile demo
