@@ -76,8 +76,7 @@
   - [ ] Structs
   - [ ] Dynamic types (string, bytes, etc.)
   - [x] Move interface maker. (Creates a move project with interfaces from abi)
-  - [ ] Event mapping. 
-
+  - [ ] Event mapping.
 -[ ] Optimizations and improvements.
   - [ ] Move part of the common contract code to a separate library to reduce the size of the module.
   - [ ] Optimization of the code generator to reduce the size of the module and reduce gas costs.
