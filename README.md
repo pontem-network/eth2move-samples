@@ -38,10 +38,6 @@ aptos --version
 ### Installation e2m
 Cloning the repository and installing e2m:
 
-```bash
-git clone https://github.com/pontem-network/eth2move
-cargo +nightly install --path cli/e2m --features=deploy
-```
 
 ### See help:
 ```bash
@@ -83,148 +79,16 @@ The name from the passed **solidity library** will be used as the filename and t
 After completing the command, you will see the path to the created file (Example: "./NameSolModule.mv"). 
 By default, the file is saved to the current directory.
 
-##### examples/a_plus_b.sol
+#### Samples
+
 ```bash
-e2m examples/a_plus_b.sol 
+ e2m samples/users.sol -o ./Users.mv  --profile 0x3 
 ```
 
 ###### Result:
-> Saved in "./APlusB.mv
-
-Move module address: **Address from the "default" profile**\
-Move module name: **APlusB**
-
-##### examples/APlusB.abi
-```bash
-e2m examples/APlusB.abi
-```
-
-##### Result:
-> Saved in "./APlusB.mv"
-
-Move module address: **Address from the "default" profile**\
-Move module name: **APlusB**
-
-
-##### examples/APlusB.bin
-```bash
-e2m examples/APlusB.bin
-```
-
-###### Result:
-> Saved in "./APlusB.mv"
-
-Move module address: **Address from the "default" profile**\
-Move module name: **APlusB**
-
-
-##### ! Fail: examples/BinNotFound.abi
-```bash
-e2m examples/BinNotFound.abi
-```
-
-###### Result:
-> Error: Couldn't find bin.
-Path:"examples/BinNotFound.bin"
-
-> **! IMPORTANT**\
-> A successful broadcast always requires a **bin** and an **abi** **solidity library**
-
-#### Path to save
-The `-o`, `--output` parameter is responsible for specifying the location where the converted file will be saved.
-
-##### examples/const_fn.sol
-
-```bash
-e2m examples/const_fn.sol -o ./Test.mv
-```
-
-###### Result:
-> Saved in "./Test.mv"
-
-The move binary file will be created in the current directory named **Test.vm**\
-Move module address: **Address from the "default" profile** \
-Move module name: **Cons**
-
-##### examples/APlusB.bin
-
-```bash
-e2m examples/APlusB.bin -o ./AB.mv
-```
-
-###### Result:
-> Saved in "./AB.mv"
-
-Move module address: **Address from the "default" profile** \
-Move module name: **APlusB**
-
-#### Explicit indication of the module name in the received move bytecode
-The `--module` argument is responsible for explicitly specifying the move module name.
-
-##### examples/APlusB.abi
-
-```bash
-e2m examples/APlusB.abi --module ApB
-```
-
-###### Result:
-> Saved in "./APlusB.mv"
-
-Move module address: **Address from the "default" profile** \
-Move module name: **ApB**
-
-##### examples/two_functions.sol
-
-```bash
-e2m examples/two_functions.sol --module TF
-```
-
-###### Result:
-> Saved in "./TwoFunctions.mv"
-
-Move module address: **Address from the "default" profile** \
-Move module name: **TF**
-
-#### Explicit indication of the module address in the received move bytecode
-The argument `-p`, `--profile` is responsible for explicitly specifying the address of the transfer module or the name of the profile from which the address will be taken.
-If the parameter value starts with **"0x"**, then it will be taken as an address, everything else will be considered the **profile name**.\
-Profile data will be taken from **.aptos/config.yaml**
-
-##### examples/const_fn.sol
-
-```bash
-e2m examples/const_fn.sol -p 0x3
-```
-
-###### Result:
-> Saved in "./ConstFn.mv"
+> Saved in "./Users.mv"
 
 Move module address: **0x3** \
-Move module name: **ConstFn**
-
-##### examples/two_functions.sol
-
-```bash
-e2m examples/two_functions.sol --profile demo
-```
-
-###### Result:
-> Saved in "./TwoFunctions.mv"
-
-Move module address: **Address from the "demo" profile** \
-Move module name: **TwoFunctions**
-
-#### Combined arguments
-
-```bash
- e2m examples/const_fn.sol -o ./MyMove.mv --module DemoName --profile 0x3 
-```
-
-###### Result:
-> Saved in "./MyMove.mv"
-
-Move module address: **0x3** \
-Move module name: **DemoName**
 
 
 ### Convert and publish the module
@@ -237,14 +101,10 @@ After successful publication, you will receive complete information in json form
 
 #### examples/two_functions.sol
 ```bash
-e2m examples/two_functions.sol -d
+e2m samples/users.sol -d
 ```
 
-#### examples/APlusB.abi
-```bash
-e2m examples/APlusB.abi -o ./module.mv --profile demo --deploy
-```
 
 ## What the converter can already do.
 
-See the [folder](https://github.com/pontem-network/eth2move/tree/master/translator/test_infra/sol)
+See the [folder](https://github.com/pontem-network/eth2move-samples/tree/main/samples)
