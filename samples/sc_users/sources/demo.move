@@ -25,5 +25,11 @@ module sc::ScUser {
     public entry fun is_empty_balance(account_address: &signer) {
         assert!(Users::get_balance(account_address) == Users::from_u128(0), 4);
     }
+
+    public entry fun transfer(account_address: &signer, to:address, amount: u128) {
+        Users::transfer(account_address, to, Users::from_u128(amount));
+    }
+
+
 }
 

@@ -1,4 +1,4 @@
-module 0x30dd6e232b94cc779e5c9a33ebdfc87ccd36bfd7d6c80bda6ad3c0c1ae8f266e::Users {
+module _::Users {
     public native fun constructor(account_address: &signer);
 
     public native fun create_user(account_address: &signer,);

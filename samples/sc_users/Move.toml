@@ -4,7 +4,7 @@ version = '1.0.0'
 upgrade_policy = "arbitrary"
 
 [addresses]
-sc = "30dd6e232b94cc779e5c9a33ebdfc87ccd36bfd7d6c80bda6ad3c0c1ae8f266e"
+sc = "_"
 
 [dependencies]
 AptosFramework = { git = 'https://github.com/aptos-labs/aptos-core.git', rev = 'main', subdir = 'aptos-move/framework/aptos-framework' }
