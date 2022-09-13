@@ -1,21 +1,15 @@
-# eth2move
-
-EVM to Move static bytecode translator.
-
-[Feature list](feature-list.md)
-
-## e2m
+# e2m
 Converts **solidity file** to **binary move** code. You can convert from **abi + bin** files or a **sol** file
 
 > **! IMPORTANT**\
 > To convert from a **sol** file, **solc** must be installed on the computer and accessible from the terminal using the short command **solc**.\
 > To publish, you need the installed **aptos** utility and **e2m** build with the flag `--features=deploy`
 
-### Install solc
+## Install solc
 
 How to install **solc**, [see the documentation](https://docs.soliditylang.org/en/develop/installing-solidity.html)
 
-#### Checking solc
+### Checking solc
 
 The **solc** version must be at least **0.8.15**
 
@@ -25,11 +19,11 @@ solc --version
 > **! IMPORTANT**\
 > If this command is not available for execution from the terminal, e2m will not work.
 
-### Install aptos
+## Install aptos
 
 How to install **aptos**, [see the documentation](https://aptos.dev/cli-tools/aptos-cli-tool/install-aptos-cli)
 
-#### Checking aptos
+### Checking aptos
 
 The **aptos** version must be at least **0.3.3**
 
@@ -37,12 +31,12 @@ The **aptos** version must be at least **0.3.3**
 aptos --version
 ```
 
-### Installation e2m
+## Installation e2m
 @todo
 
 ### See help:
 ```bash
-./e2m_linux-0_2_1 --help
+e2m --help
 ```
 
 #### Input parameters
@@ -56,7 +50,7 @@ aptos --version
 * `--native_input`      Input params of native type
 * `--native_output`     Output value of native type
 
-### Example
+## Example
 
 > **! IMPORTANT**
 > 
@@ -80,7 +74,7 @@ aptos --version
 
 
 
-#### Module transformation and publication
+## Module transformation and publication
 This command we will make
 * Converting a "sol" file to "mv"
 * Generate an interface to use in source. The `./i_users/` folder will appear in the current directory 
@@ -88,7 +82,7 @@ This command we will make
 * We will publish the generated module from the "default" profile
 
 ```bash
-./e2m_linux-0_2_1 ./samples/users.sol \
+e2m ./samples/users.sol \
    -o ./i_users \
    -a self \
    --native_input \
@@ -96,7 +90,7 @@ This command we will make
    -i \
    -d
 ```
-#### Publishing a script
+## Publishing a script
 Publishing a script for interacting with the module
 
 > **Important** don't forget to replace the address
@@ -107,7 +101,7 @@ aptos move publish \
   --max-gas 1000
 ```
 
-#### Calling the module constructor. 
+## Calling the module constructor. 
 Calling the module constructor to assign the current account as the owner
 
 ```bash
@@ -116,7 +110,7 @@ aptos move run \
    --max-gas 1000
 ```
 
-#### Adding a "demo" account
+## Adding a "demo" account
 ```bash
 aptos move run \
    --function-id default::ScUser::create_user \
@@ -124,7 +118,7 @@ aptos move run \
    --profile demo
 ```
 
-#### ID verification
+## ID verification
 account "default": id = 1
 ```bash
 aptos move run \
@@ -142,7 +136,7 @@ aptos move run \
   --profile demo
 ```
 
-#### Checking whether this account is the owner:
+## Checking whether this account is the owner:
 ```bash
 aptos move run \
    --function-id default::ScUser::is_owner \
@@ -156,7 +150,7 @@ aptos move run \
    --profile demo
 ```
 
-#### Checking the balance
+## Checking the balance
 account "default": 10000000000000000000000000000
 ```bash
 aptos move run \
@@ -173,7 +167,7 @@ aptos move run \
   --profile demo
 ```
 
-#### Transfer
+## Transfer
 Sending 200 coins from "default" to "demo"
 ```bash
 aptos move run \
@@ -182,7 +176,7 @@ aptos move run \
   --max-gas 1000
 ```
 
-##### Checking the transfer
+### Checking the transfer
 Account **default**
 ```bash
 aptos move run \
