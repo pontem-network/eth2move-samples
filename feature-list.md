@@ -1,5 +1,5 @@
 # Feature-List
-❗Supported but not verified.
+❗Supported but not verified.\
 ✖️️Implemented in a static analyzer, but not available at runtime.
 
 - [x] Supported all sized types. (U256, bool, address, etc.)
