@@ -40,7 +40,8 @@ Unpack the archive and place the executable file in a place convenient for you. 
 > In all examples, e2m will be called via an alias
 
 
-### Convert. See help:
+### Convert. 
+See help:
 ```bash
 e2m convert --help
 ```
@@ -206,10 +207,13 @@ aptos move run \
 
 ### Ethereum Type
 
-#### Call. See help:
+#### Call. 
+
+See help:
 ```bash
 e2m call --help
 ```
+
 ##### Input parameters
 * `-p`, `--profile`     Profile name or address. The address must start with "0x". [default: default]
 * `-a`, `--args`        Arguments combined with their type separated by spaces. Supported types \ 
