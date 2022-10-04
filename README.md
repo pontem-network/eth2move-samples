@@ -96,7 +96,7 @@ e2m convert --help
 ### Example
 
 You can find the files from the examples in
-the [eth2move/examples](https://github.com/pontem-network/eth2move/tree/master/examples) folder
+the ./examples folder
 
 #### Required parameters
 
@@ -394,7 +394,7 @@ e2m resources --help
 
 This command we will make
 
-* Converting a [./examples/users.sol](https://github.com/pontem-network/eth2move/blob/master/examples/users.sol) file
+* Converting a ./examples/users.sol file
   to "mv"
 * Generate an interface to use in source. The `./examples/i_users/` folder will appear in the current directory
 * Module will support "move" types
@@ -414,7 +414,7 @@ e2m convert ./examples/users.sol \
 
 #### Publishing a script
 
-Publishing a [script](https://github.com/pontem-network/eth2move/blob/master/examples/sc_users) for interacting with the
+Publishing a ./examples/sc_users for interacting with the
 module
 
 > **Important** don't forget to replace the address
@@ -551,7 +551,7 @@ aptos move run \
 
 This command we will make
 
-* Converting a [./samples/users.sol](https://github.com/pontem-network/eth2move-samples/blob/main/samples/users.sol)
+* Converting a ./examples/users.sol
   file to "mv"
 * Generate an interface to use in source. The `./i_users_ethtypes/` folder will appear in the current directory
 * We will publish the generated module from the "default" profile
@@ -568,7 +568,7 @@ e2m convert ./examples/users.sol \
 
 #### Publishing a script
 
-Publishing a [script](https://github.com/pontem-network/eth2move-samples/tree/main/samples/sc_users) for interacting
+Publishing a ./examples/sc_users for interacting
 with the module
 
 > **Important** don't forget to replace the address
@@ -724,7 +724,3 @@ e2m resources --query events \
   --resource-path default::Users::Persist::events \
   --decode-types data:address,address,u256 topics:bytes
 ```
-
-# What the converter can already do.
-
-See the [folder](https://github.com/pontem-network/eth2move/tree/master/translator/test_infra/sol)
