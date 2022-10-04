@@ -1,13 +1,12 @@
 [package]
-name = 'sc_users'
+name = 'sc_users_eth'
 version = '1.0.0'
-upgrade_policy = "arbitrary"
 
 [addresses]
 sc = "_"
 
 [dependencies]
 AptosFramework = { git = 'https://github.com/aptos-labs/aptos-core.git', rev = 'main', subdir = 'aptos-move/framework/aptos-framework' }
-Users = { local = "../../i_users" }
+EthUsers = { local = "../i_users_ethtypes" }
 
 
