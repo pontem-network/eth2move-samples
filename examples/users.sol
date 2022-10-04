@@ -17,9 +17,9 @@ contract Users {
     event NewUser(address addr, bool is_admin, uint256 amount);
 
     constructor(address admin) {
-       owner = admin;
-       seq = 1;
-       user_store[admin] = User(seq, true, 10000000000000000000000000000);
+        owner = admin;
+        seq = 1;
+        user_store[admin] = User(seq, true, 10000000000000000000000000000);
     }
 
     function create_user() public {
