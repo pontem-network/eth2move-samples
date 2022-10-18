@@ -8,8 +8,7 @@ Converts **solidity file** to **binary move** code. You can convert from **abi +
 
 > **! IMPORTANT**\
 > To convert from a **sol** file, **solc** must be installed on the computer and accessible from the terminal using the
-> short command **solc**.\
-> To publish, you need the installed **aptos** utility and **e2m** build with the flag `--features=deploy`
+> short command **solc**.
 
 ## Install solc
 
