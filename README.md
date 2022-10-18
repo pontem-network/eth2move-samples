@@ -32,7 +32,7 @@ How to install **aptos**, [see the documentation](https://aptos.dev/cli-tools/ap
 
 ## Checking aptos
 
-The **aptos** version must be at least **0.3.8**
+The **aptos** version must be at least **1.0.0**
 
 ```bash
 aptos --version
@@ -47,9 +47,12 @@ in the system for this file.
 > In all examples, e2m will be called via an alias
 
 
-> **! IMPORTANT**\
+> **! IMPORTANT**
+>
+> **Creating an account "default" and "demo"**
 > Before running the examples, you will need to create a private key.
 > It will be used both for the module address and for publishing on the node.
+>
 > Default profile:
 > ```bash
 > aptos init
@@ -59,6 +62,20 @@ in the system for this file.
 > aptos init --profile demo
 > ```
 > See more: [aptos init](https://aptos.dev/cli-tools/aptos-cli-tool/use-aptos-cli/#step-1-run-aptos-init)
+>
+>
+> **Replenishment of the balance in "devnet"**
+>
+> Default profile:
+> ```bash
+> aptos account fund-with-faucet --account default --amount 10000000
+> ```
+> Demo profile:
+> ```bash
+> aptos account fund-with-faucet --account demo --amount 10000000
+> ```
+>
+> See more: [aptos account](https://aptos.dev/cli-tools/aptos-cli-tool/use-aptos-cli/#fund-an-account-with-the-faucet)
 
 ### See help:
 
@@ -286,13 +303,13 @@ After successful publication, you will receive complete information in json form
 #### examples/two_functions.sol
 
 ```bash
-e2m convert examples/two_functions.sol -d
+e2m convert examples/two_functions.sol -d --max-gas 20000
 ```
 
 #### examples/APlusB.abi
 
 ```bash
-e2m convert examples/APlusB.abi -o ./module.mv --profile demo --deploy
+e2m convert examples/APlusB.abi -o ./module.mv --profile demo --deploy --max-gas 20000
 ```
 
 ### Generate an interface project
@@ -407,7 +424,7 @@ e2m convert ./examples/users.sol \
    --native-input \
    --native-output \
    -i \
-   --max-gas 10000 \
+   --max-gas 25000 \
    --save-abi \
    -d
 ```
@@ -422,7 +439,7 @@ module
 ```bash
 aptos move publish \
   --package-dir ./examples/sc_users \
-  --max-gas 2000 \
+  --max-gas 10000 \
   --assume-yes
 ```
 
@@ -433,7 +450,7 @@ Calling the module constructor to assign the current account as the owner
 ```bash
 aptos move run \
    --function-id default::ScUser::constructor \
-   --max-gas 2000 \
+   --max-gas 5000 \
    --assume-yes
 ```
 
@@ -442,7 +459,7 @@ aptos move run \
 ```bash
 aptos move run \
    --function-id default::ScUser::create_user \
-   --max-gas 2000 \
+   --max-gas 25000 \
    --profile demo \
    --assume-yes
 ```
@@ -455,7 +472,7 @@ account "default": id = 1
 aptos move run \
   --function-id default::ScUser::is_id \
   --args u128:1 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --assume-yes
 ```
 
@@ -465,7 +482,7 @@ account "demo": id = 2
 aptos move run \
   --function-id default::ScUser::is_id \
   --args u128:2 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --profile demo \
   --assume-yes
 ```
@@ -475,7 +492,7 @@ aptos move run \
 ```bash
 aptos move run \
    --function-id default::ScUser::is_owner \
-   --max-gas 1000 \
+   --max-gas 10000 \
    --assume-yes
 ```
 
@@ -484,7 +501,7 @@ An **error** will occur when checking from another account
 ```bash
 aptos move run \
    --function-id default::ScUser::is_owner \
-   --max-gas 1000 \
+   --max-gas 10000 \
    --profile demo \
    --assume-yes
 ```
@@ -497,7 +514,7 @@ account "default": 10000000000000000000000000000
 aptos move run \
   --function-id default::ScUser::check_balance \
   --args u128:10000000000000000000000000000 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --assume-yes
 ```
 
@@ -506,8 +523,9 @@ account "demo": 0
 ```bash
 aptos move run \
   --function-id default::ScUser::is_empty_balance \
-  --max-gas 1000 \
-  --profile demo
+  --max-gas 10000 \
+  --profile demo \
+  --assume-yes
 ```
 
 #### Transfer
@@ -518,7 +536,7 @@ Sending 200 coins from "default" to "demo"
 aptos move run \
   --function-id default::ScUser::transfer \
   --args address:demo u128:200 \
-  --max-gas 2000 \
+  --max-gas 25000 \
   --assume-yes
 ```
 
@@ -530,7 +548,7 @@ Account **default**
 aptos move run \
   --function-id default::ScUser::check_balance \
   --args u128:9999999999999999999999999800 \
-  --max-gas 1000\
+  --max-gas 10000 \
   --assume-yes
 ```
 
@@ -540,7 +558,7 @@ Account **demo**
 aptos move run \
   --function-id default::ScUser::check_balance \
   --args u128:200 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --profile demo\
   --assume-yes
 ```
@@ -562,7 +580,7 @@ e2m convert ./examples/users.sol \
    -o ./examples/i_users_ethtypes \
    -a self \
    -i \
-   --max-gas 10000 \
+   --max-gas 30000 \
    -d
 ```
 
@@ -576,7 +594,7 @@ with the module
 ```bash
 aptos move publish \
   --package-dir ./examples/sc_users_ethtypes \
-  --max-gas 2000 \
+  --max-gas 20000 \
   --assume-yes
 ```
 
@@ -587,7 +605,7 @@ Calling the module constructor to assign the current account as the owner
 ```bash
 e2m call \
    --function-id default::ScUserEth::constructor \
-   --max-gas 2000
+   --max-gas 5000
 ```
 
 #### Adding a "demo" account
@@ -595,7 +613,7 @@ e2m call \
 ```bash
 e2m call \
    --function-id default::ScUserEth::create_user \
-   --max-gas 2000 \
+   --max-gas 25000 \
    --profile demo
 ```
 
@@ -607,7 +625,7 @@ account "default": id = 1
 e2m call \
   --function-id default::ScUserEth::is_id \
   --args u128:1 \
-  --max-gas 2000 \
+  --max-gas 10000 \
   --encode
 ```
 
@@ -617,7 +635,7 @@ account "demo": id = 2
 e2m call \
   --function-id default::ScUserEth::is_id \
   --args u128:2 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --profile demo \
   --encode
 ```
@@ -627,7 +645,7 @@ e2m call \
 ```bash
 e2m call \
    --function-id default::ScUserEth::is_owner \
-   --max-gas 1000
+   --max-gas 10000
 ```
 
 An **error** will occur when checking from another account
@@ -635,7 +653,7 @@ An **error** will occur when checking from another account
 ```bash
 e2m call \
    --function-id default::ScUserEth::is_owner \
-   --max-gas 1000 \
+   --max-gas 10000 \
    --profile demo
 ```
 
@@ -647,7 +665,7 @@ account "default": 10000000000000000000000000000
 e2m call \
   --function-id default::ScUserEth::check_balance \
   --args u128:10000000000000000000000000000 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --encode
 ```
 
@@ -656,7 +674,7 @@ account "demo": 0
 ```bash
 e2m call \
   --function-id default::ScUserEth::is_empty_balance \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --profile demo
 ```
 
@@ -668,7 +686,7 @@ Sending 200 coins from "default" to "demo"
 e2m call \
   --function-id default::ScUserEth::transfer \
   --args address:demo u128:200 \
-  --max-gas 2000 \
+  --max-gas 25000 \
   --encode
 ```
 
@@ -680,7 +698,7 @@ Account **default**
 e2m call \
   --function-id default::ScUserEth::check_balance \
   --args u128:9999999999999999999999999800 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --encode
 ```
 
@@ -690,7 +708,7 @@ Account **demo**
 e2m call \
   --function-id default::ScUserEth::check_balance \
   --args u128:200 \
-  --max-gas 1000 \
+  --max-gas 10000 \
   --profile demo \
   --encode
 ```
