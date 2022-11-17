@@ -7,6 +7,6 @@ sc = "_"
 
 [dependencies]
 AptosFramework = { git = 'https://github.com/aptos-labs/aptos-core.git', rev = 'main', subdir = 'aptos-move/framework/aptos-framework' }
-EthUsers = { local = "../i_users_ethtypes" }
+UsersEth = { local = "../i_users_ethtypes" }
 
 

@@ -1,4 +1,5 @@
 # Feature-List
+
 ❗Supported but not verified.\
 ✖️️Implemented in a static analyzer, but not available at runtime.
 
@@ -8,23 +9,23 @@
 - [x] Memory operations.
 - [x] Branching (if, else)
 - [x] Hash (keccak256 replaced with sha3)
-- [x] Math 
+- [x] Math
   - [x] Add
   - [x] Sub
   - [x] Mul
   - [x] Div
   - [x] Mod
-  - [x] SDiv❗
-  - [x] SMod❗
-  - [x] SLt 
+  - [x] SDiv
+  - [x] SMod
+  - [x] SLt
   - [x] SGt
-  - [x] Exp❗
-  - [x] SignExtend❗
+  - [x] Exp
+  - [x] SignExtend
   - [x] BitOr
   - [x] BitAnd
   - [x] BitXor
   - [x] Shl
-  - [x] Sar❗(shift right with sign)
+  - [x] Sar (shift right with sign)
   - [x] Shr
   - [x] Lt
   - [x] Gt
@@ -32,28 +33,28 @@
   - [x] Neq
   - [x] BitNot
   - [x] IsZero
-  - [x] Byte❗
-  - [ ] AddMod (a + b) % N
-  - [ ] MulMod (a * b) % N
-- [ ] Looping 
-  - [x] For❗
-  - [ ] While
-  - [ ] Do-While
+  - [x] Byte
+  - [x] AddMod (a + b) % N
+  - [x] MulMod (a * b) % N
+- [ ] Looping
+  - [x] For
+  - [x] While
+  - [x] Do-While
 - [ ] Dynamic types (string, bytes, etc.)
 - [ ] Dependency
   - [x] Message signer
-  - [ ] Balance
+  - [x] Balance
   - [ ] Origin
   - [ ] Caller
   - [ ] CallValue
   - [ ] CallDataLoad
   - [ ] CallDataSize
-  - [ ] Blockhash
-  - [ ] Timestamp
-  - [ ] GasLimit
+  - [x] Blockhash
+  - [x] Timestamp
+  - [x] GasLimit
   - [ ] Difficulty
-  - [ ] Number
-  - [ ] GasPrice
+  - [x] Number
+  - [x] GasPrice
   - [ ] Coinbase
   - [ ] Gas
 - [ ] Call between contracts
@@ -80,3 +81,5 @@
   - [ ] Dynamic types (string, bytes, etc.)
   - [x] Move interface maker. (Creates a move project with interfaces from abi)
   - [ ] Event mapping.
+- [x] E2m
+  - [x] Local call of a remote function
