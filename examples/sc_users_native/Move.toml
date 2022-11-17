@@ -1,5 +1,5 @@
 [package]
-name = 'sc_users'
+name = 'sc_users_native'
 version = '1.0.0'
 upgrade_policy = "compatible"
 
@@ -8,6 +8,6 @@ sc = "_"
 
 [dependencies]
 AptosFramework = { git = 'https://github.com/aptos-labs/aptos-core.git', rev = 'main', subdir = 'aptos-move/framework/aptos-framework' }
-Users = { local = "../i_users" }
+UsersNative = { local = "../i_users_native" }
 
 
